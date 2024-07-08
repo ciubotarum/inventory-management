@@ -56,10 +56,28 @@
 
 ## Additional Information
 
+- **Make Migrations**:
+  - To apply migrations for db
+    ```sh
+    python manage.py makemigrations
+    ```
+
 - **Running Migrations**:
   - To apply migrations and create the necessary database tables, run:
     ```sh
     python manage.py migrate
+    ```
+
+- **Instantiate Tour Class**:
+  - To create Tour objects, records in our db (go to `python manage.py shell`):
+    ```sh
+    from asiatoursagency.models import Tour
+
+    to1 = Tour(origin_country="Japan", destination_country="China", number_of_nights=10, price=1500)
+    ```
+  - To save the tour in database
+    ```sh
+    to1.save()
     ```
 
 - **Creating a Superuser**:
