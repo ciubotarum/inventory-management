@@ -86,3 +86,10 @@
     python manage.py createsuperuser
     ```
 
+# Troubleshooting
+
+- To solve error message `no such table: django_session` run the following commands
+  ```sh
+  python manage.py makemigrations
+  python manage.py migrate
+  ```
