@@ -26,7 +26,7 @@
 
 4. Install Django:
     ```sh
-    pip install Django
+    pip install django
     ```
 
 5. Generate a List of All Installed Python Packages and Their Respective Versions, and Save to `requirements.txt`:
