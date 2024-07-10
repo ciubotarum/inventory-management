@@ -6,6 +6,6 @@ class ContactForm(forms.Form):
     message = forms.CharField(widget=forms.Textarea)   # gives a textbox area to type
     
     def send_email(self):
-        print(f"Sending email from {self.cleaned_data ['email']} with message: {self.cleaned_data ['mesage']}")
+        print(f"Sending email from {self.cleaned_data ['email']} with message: {self.cleaned_data ['message']}")
 
     
