@@ -1,10 +1,13 @@
+# To handle views and redirects
 from django.shortcuts import render, redirect
+# To Import auth functions from Django
 from django.contrib.auth import authenticate, login, logout
+# The login_required decorator to protect views
 from django.contrib.auth.decorators import login_required
 # For class-based views[CBV]
 from django.contrib.auth.mixins import LoginRequiredMixin
 # For class-based views[CBV]
-from django.view import View
+from django.views import View
 # Import the User class (model)
 from django.contrib.auth.models import User
 # Import the RegisterForm from forms.py
@@ -21,11 +24,12 @@ def register_view(request):
             user = User.objects.create_user(username=username, password=password)
             login(request, user)
             return redirect('home')
-        else:
-            form = RegisterForm()
-            return render(request, 'accounts/register.html', {'form':form})
+    else:
+        form = RegisterForm()
+    return render(request, 'accounts/register.html', {'form':form})
 
 def login_view(request):
+    error_message = None
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
@@ -51,7 +55,7 @@ def logout_view(request):
 # Using the decorator
 @login_required
 def home_view(request):
-    return render(request, 'home/home.html')
+    return render(request, 'auth1_app/home.html')
 
 # Protected View
 class ProtectedView(LoginRequiredMixin, View):
