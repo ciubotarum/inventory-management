@@ -86,6 +86,13 @@
     python manage.py createsuperuser
     ```
 
+- **Final Project**:
+  - To install dependencies
+    ```sh
+    pipenv install django-crispy-forms
+    pipenv install crispy-bootstrap5
+    ```
+
 # Troubleshooting
 
 - To solve error message `no such table: django_session` run the following commands
