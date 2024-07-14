@@ -19,7 +19,7 @@ def product_create_view(request):
         if form.is_valid():
             form.save()
             return redirect('product_list')
-    return redirect(request, 'invApp/product_form.html', {'form':form})
+    return render(request, 'invApp/product_form.html', {'form':form})
 
 # Read View
 def product_list_view(request):
